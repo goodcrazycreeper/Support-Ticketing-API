@@ -38,4 +38,9 @@ public class Ticket implements Comparable<Ticket> {
     public String toString() {
         return String.format("Ticket[id=%d, priority=%d, closed=%b]", id, priority, closed);
     }
+    
+    public void open() {
+        this.closed = false;
+    }
+
 }

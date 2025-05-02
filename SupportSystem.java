@@ -39,9 +39,7 @@ public class SupportSystem {
     public void undoClose() {
         if (!undoStack.isEmpty()) {
             Ticket t = undoStack.pop();
-            // cannot reopen closed boolean, add reopen method if needed
-            // For now, we simply mark as open
-            // t.open();
+            t.open();
         }
     }
     
