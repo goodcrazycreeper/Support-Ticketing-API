@@ -15,7 +15,7 @@ public class BST<K extends Comparable<K>, V> {
         int cmp = key.compareTo(node.key);
         if (cmp < 0) node.left = insertRec(node.left, key, value);
         else if (cmp > 0) node.right = insertRec(node.right, key, value);
-        else node.value = value; // replace
+        else node.value = value;
         return node;
     }
 

@@ -3,10 +3,10 @@ import java.util.Collections;
 import java.util.Stack;
 
 public class SupportSystem {
-    private final ArrayList<Ticket> tickets = new ArrayList<>();
-    private final BST<Integer, Ticket> ticketTree = new BST<>();
+    private final ArrayList < Ticket > tickets = new ArrayList < > ();
+    private final BST < Integer, Ticket > ticketTree = new BST < > ();
     private final TicketQueue pendingQueue = new TicketQueue();
-    private final Stack<Ticket> undoStack = new Stack<>();
+    private final Stack < Ticket > undoStack = new Stack < > ();
 
     public Ticket createTicket(User user, int priority, String desc) {
         Ticket t = new Ticket(user, priority, desc);
@@ -42,10 +42,8 @@ public class SupportSystem {
             t.open();
         }
     }
-    
-    public ArrayList<Ticket> getAllTickets() {
+
+    public ArrayList < Ticket > getAllTickets() {
         return tickets;
     }
 }
-
-

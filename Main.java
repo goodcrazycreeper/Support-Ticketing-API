@@ -5,7 +5,7 @@ public class Main {
         SupportSystem sys = new SupportSystem();
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("🎧 Welcome to the Tech Support Ticketing System!");
+        System.out.println("Welcome to the Tech Support Ticketing System!");
         boolean running = true;
 
         while (running) {
@@ -34,7 +34,7 @@ public class Main {
 
                     User user = new User(name, email);
                     Ticket newTicket = sys.createTicket(user, priority, desc);
-                    System.out.println("✅ Ticket created! ID: " + newTicket.getId());
+                    System.out.println("Ticket created! ID: " + newTicket.getId());
                     break;
 
                 case "2":
@@ -42,15 +42,15 @@ public class Main {
                     int searchId = Integer.parseInt(scanner.nextLine());
                     Ticket found = sys.getTicketById(searchId);
                     if (found != null) {
-                        System.out.println("🔍 Found: " + found);
+                        System.out.println("Found: " + found);
                     } else {
-                        System.out.println("❌ Ticket not found.");
+                        System.out.println("Ticket not found.");
                     }
                     break;
 
                 case "3":
                     sys.sortByPriority();
-                    System.out.println("📋 All Tickets (Sorted by Priority):");
+                    System.out.println("All Tickets (Sorted by Priority):");
                     for (Ticket ticket : sys.getAllTickets()) {
                         System.out.println(ticket);
                     }
@@ -59,9 +59,9 @@ public class Main {
                 case "4":
                     Ticket next = sys.serveNext();
                     if (next != null) {
-                        System.out.println("🎫 Serving Ticket: " + next);
+                        System.out.println("Serving Ticket: " + next);
                     } else {
-                        System.out.println("📭 No pending tickets.");
+                        System.out.println("No pending tickets.");
                     }
                     break;
 
@@ -69,24 +69,23 @@ public class Main {
                     System.out.print("Enter Ticket ID to close: ");
                     int closeId = Integer.parseInt(scanner.nextLine());
                     sys.closeTicket(closeId);
-                    System.out.println("🛑 Ticket " + closeId + " marked as closed.");
+                    System.out.println("Ticket " + closeId + " marked as closed.");
                     break;
 
                 case "6":
                     sys.undoClose();
-                    System.out.println("↩️ Last ticket closure undone.");
+                    System.out.println("Last ticket closure undone.");
                     break;
 
                 case "0":
                     running = false;
-                    System.out.println("👋 Goodbye!");
+                    System.out.println("Goodbye!");
                     break;
 
                 default:
-                    System.out.println("⚠️ Invalid option. Try again.");
+                    System.out.println("Invalid option. Try again with a valid option.");
             }
         }
-
         scanner.close();
     }
 }
